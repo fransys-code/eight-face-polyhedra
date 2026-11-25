@@ -1,29 +1,29 @@
-# 1,295 combinatorial types of 8-face polyhedra that cannot be convex
+# 1,325 combinatorial types of 8-face polyhedra that cannot be convex
 
 How many different shapes (combinatorial types) of polyhedra with 8 faces cannot be realised by
 a convex polyhedron? M. Gardner (1983) quotes 277, with neither source nor definition;
 B. Grünbaum ("Acoptic polyhedra", 1999) writes that he does not know what this number counts,
 lists 17 non-convex types with 7 faces and poses the enumeration problem. This repository
-contains one exact realisation of each of **1,295 pairwise different types with 8 faces**, found
+contains one exact realisation of each of **1,325 pairwise different types with 8 faces**, found
 by a computer search, and an independent exact verifier.
 
 | Genus | Vertices | Edges | Types |
 |---|---|---|---|
 | 0 (no hole) | 12 | 18 | 13 |
-| 1 (torus) | 16 | 24 | 972 |
-| 2 | 20 | 30 | 310 |
+| 1 (torus) | 16 | 24 | 973 |
+| 2 | 20 | 30 | 339 |
 
 > **Status.** Not checked by a third party; novelty not confirmed (unpublished or overlooked
 > enumerations may exist). This is a **lower bound, not a complete count**: plane arrangements
 > were sampled at random, and the setting is restricted (see below). In particular the two known
 > 8-face polyhedra of genus 3 (Mizhaev; Röst and Vígh, 2026) were not reached by the sampling
-> and are not among the 1,295. Every listed shape is checked by the program in `verification/`,
+> and are not among the 1,325. Every listed shape is checked by the program in `verification/`,
 > which was written independently of the search. Corrections and pointers to prior work are
 > welcome: please open an issue.
 
-*Résumé en français : un exemple exact de chacune de 1 295 formes (types combinatoires)
-différentes de polyèdres à 8 faces qui ne peuvent pas être convexes : 13 sans trou, 972 tores,
-310 à deux trous, avec un vérificateur exact indépendant. C'est une borne inférieure obtenue par
+*Résumé en français : un exemple exact de chacune de 1 325 formes (types combinatoires)
+différentes de polyèdres à 8 faces qui ne peuvent pas être convexes : 13 sans trou, 973 tores,
+339 à deux trous, avec un vérificateur exact indépendant. C'est une borne inférieure obtenue par
 échantillonnage, pas un décompte complet. Pas encore vérifié par un tiers ; nouveauté non
 confirmée.*
 
@@ -83,15 +83,15 @@ For each polyhedron, `verify.py` checks with exact arithmetic that:
    faces on the line common to their planes are computed as unions of intervals and compared);
 5. the genus computed from the Euler characteristic is the stated one, and there are 8 faces;
 6. the type cannot be convex: genus at least 1, or two faces sharing at least two edges;
-7. the 1,295 types are pairwise different (canonical form of the map, up to mirror image).
+7. the 1,325 types are pairwise different (canonical form of the map, up to mirror image).
 
 Output (about 25 s):
 
 ```
 genus 0: 13 shapes (12 vertices, 18 edges, 8 faces)
-genus 1: 972 shapes (16 vertices, 24 edges, 8 faces)
-genus 2: 310 shapes (20 vertices, 30 edges, 8 faces)
-1295 shapes read, 1295 valid, 1295 pairwise distinct combinatorial types, 0 invalid
+genus 1: 973 shapes (16 vertices, 24 edges, 8 faces)
+genus 2: 339 shapes (20 vertices, 30 edges, 8 faces)
+1325 shapes read, 1325 valid, 1325 pairwise distinct combinatorial types, 0 invalid
 mizhaev.json: VALID, 8 faces, 24 vertices, 36 edges, genus 3, 28 pairs of faces share an edge
 rostvigh.json: VALID, 8 faces, 24 vertices, 36 edges, genus 3, 28 pairs of faces share an edge
 szilassi.json: VALID, 7 faces, 14 vertices, 21 edges, genus 1, 21 pairs of faces share an edge
